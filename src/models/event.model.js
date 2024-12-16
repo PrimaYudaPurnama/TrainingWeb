@@ -25,7 +25,7 @@ const Table = sequelize.define(
     created_at: {
       type: DataTypes.DATE
     },
-    update_at: {
+    updated_at: {
       type: DataTypes.DATE
     }
   },

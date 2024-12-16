@@ -19,7 +19,7 @@ const insert = (req, res, next) => {
 
 const update = async (req, res, next) => {
     try {
-      let result = await service.update(req)
+      let result = await service.update(req.params.id, req)
       return res.send(result)
     } catch (error) {
       next(error)

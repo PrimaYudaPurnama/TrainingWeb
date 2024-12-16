@@ -10,6 +10,17 @@ const showAll = async () => {
  }
 }
 
+const where = async (where) => {
+  try {
+    return await Event.where({
+      where : where
+    })
+  } catch (error) {
+   
+    throw new Error(error)
+  }
+ }
+
 const insert = async (param) => {
  try {
    return await Event.create(param)
@@ -31,17 +42,6 @@ const update = async (id_primary, param) => {
       throw new Error(error)
     }
 }
-
-const where = async (where) => {
-    try {
-      return await Event.where({
-        where : where
-      })
-    } catch (error) {
-     
-      throw new Error(error)
-    }
-   }
    
    
 

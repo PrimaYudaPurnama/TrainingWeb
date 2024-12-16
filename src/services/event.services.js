@@ -17,15 +17,18 @@ const insert = async (req) => {
     return {hasil : result}
 }
 
-const update = async (id_primary, body) => {
+const update = async (id_primary, req) => {
     let param = {
-        nama : req.body.nama,
-        tempat_acara : req.body.tempat_acara,
-        update_at : dayjs().format('YYYY-MM-DD HH:mm:ss'),
-    }
-    let result = await eventRepo.update(param);
-    return {hasil : result}
-}
+        nama: req.body.nama, 
+        tempat_acara: req.body.tempat_acara, 
+        waktu_mulai: req.body.waktu_mulai,
+        waktu_selesai: req.body.waktu_selesai,
+        created_at: req.body.created_at,
+        updated_at: dayjs().format('YYYY-MM-DD HH:mm:ss'), 
+    };
+    let result = await eventRepo.update(id_primary ,param);
+    return { hasil: result };
+};
 
 
 module.exports = {show, insert, update}
