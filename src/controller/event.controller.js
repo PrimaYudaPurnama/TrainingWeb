@@ -1,8 +1,8 @@
 let service = require('../services/event.services')
 
-const show = (req, res, next) => {
+const show = async(req, res, next) => {
   try {
-    let result = service.show(req)
+    let result = await service.show(req)
     return res.send(result)
   } catch (error) {
     next(error)

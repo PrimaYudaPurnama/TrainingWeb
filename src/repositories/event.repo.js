@@ -1,7 +1,7 @@
 const Event = require('../models/event.model')
 
 
-const showAll = async () => {
+const show = async () => {
  try {
    return await Event.findAll()
  } catch (error) {
@@ -12,7 +12,7 @@ const showAll = async () => {
 
 const where = async (where) => {
   try {
-    return await Event.where({
+    return await Event.findAll({
       where : where
     })
   } catch (error) {
@@ -59,4 +59,4 @@ const delete_status = async (id, param) => {
    
 
 
-module.exports = {showAll, insert, update, where, delete_status}
+module.exports = {show, insert, update, where, delete_status}

@@ -2,7 +2,7 @@ const eventRepo = require("../repositories/event.repo")
 const dayjs = require("dayjs");
 
 const show = async (req) => {
-    let result = await eventRepo.showAll();
+    let result = await eventRepo.where({status_delete : 0});
     return {hasil : result}
 }
 
