@@ -27,6 +27,9 @@ const Table = sequelize.define(
     },
     updated_at: {
       type: DataTypes.DATE
+    },
+    status_delete: {
+      type: DataTypes.INTEGER
     }
   },
   {

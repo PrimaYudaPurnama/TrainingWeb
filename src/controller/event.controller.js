@@ -26,5 +26,13 @@ const update = async (req, res, next) => {
     }
    }
    
+   const delete_status = async (req, res, next) => {
+    try {
+      let result = await service.delete_status(req.params.id);
+      return res.send(result);
+    } catch (error) {
+      next(error);
+  }
+}
 
-module.exports = {show, insert, update}
+module.exports = {show, insert, update, delete_status}

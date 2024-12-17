@@ -30,5 +30,14 @@ const update = async (id_primary, req) => {
     return { hasil: result };
 };
 
+const delete_status = async (id) => {
+    let param = {
+      status_delete: 1,
+    };
+    let result = await eventRepo.delete_status(id, param);
+    return { hasil: result };
+  };
+  module.exports = { show, insert, update, delete_status };
 
-module.exports = {show, insert, update}
+
+module.exports = {show, insert, update, delete_status}

@@ -42,8 +42,21 @@ const update = async (id_primary, param) => {
       throw new Error(error)
     }
 }
+
+const delete_status = async (id, param) => {
+  try {
+   
+    return await Event.update(param, {
+      where : {
+        id_event : id
+      }
+    })
+  } catch (error) {  
+    throw new Error(error)
+  }
+ }
    
    
 
 
-module.exports = {showAll, insert, update, where}
+module.exports = {showAll, insert, update, where, delete_status}
